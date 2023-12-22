@@ -12,6 +12,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../public/css/style.css">
@@ -34,8 +35,8 @@
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <!-- <span class="title">Dashboard</span> -->
-                        <a class="title" href="index.php?action=list" class="nav-link active">Teams List</a>
+                        <span class="title">Dashboard</span>
+                        
                     </a>
                 </li>
 
@@ -44,8 +45,7 @@
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <!-- <span class="title">Customers</span> -->
-                        <a class="title" href="index.php?action=create" class="nav-link">Add Team</a>
+                        <span class="title">Customers</span>
                     </a>
                 </li>
 

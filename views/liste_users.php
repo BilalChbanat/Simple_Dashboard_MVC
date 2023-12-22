@@ -2,51 +2,62 @@
 
 ob_start();
 ?>
+<div class="main">
+    <?php require_once 'views/include/header.php'; ?>
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Our Teams</h2>
+                <a class="title" href="index.php?action=list"> Teams List</a>
+                <a class="title" href="index.php?action=create">Add Team</a>
 
-<table class="table table-striped">
-    <a href="index.php?action=create" class="btn btn-primary">Ajouter</a>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Team Id</th>
-                <th>Team Name</th>
-                <th>Team League</th>
-                <th>Team Titles</th>
-                <th>Team E-mail</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user): ?>
+                <!-- <a href="#" class="btn">View All</a> -->
+            </div>
 
-                <tr>
-                    <td>
-                        <?= $user->id ?>
-                    </td>
-                    <td>
-                        <?= $user->nom ?>
-                    </td>
-                    <td>
-                        <?= $user->prenom ?>
-                    </td>
-                    <td>
-                        <?= $user->age ?>
-                    </td>
-                    <td>
-                        <?= $user->email ?>
-                    </td>
-                    <td>
-                        <a href="index.php?action=edit&id=<?php echo $user->id ?>"
-                            class="btn btn-success btn-sm">Modifier</a>
-                        <a href="index.php?action=delete&id=<?php echo $user->id ?>"
-                            class="btn btn-danger btn-sm">Supprimer</a>
-                    </td>
-                </tr>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Team Id</td>
+                        <td>Team Name</td>
+                        <td>Team League</td>
+                        <td>Team Titles</td>
+                        <td>Team E-mail</td>
+                    </tr>
+                </thead>
 
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+                <tbody>
+                    <?php foreach ($users as $user): ?>
+
+                        <tr>
+                            <td>
+                                <?= $user->id ?>
+                            </td>
+                            <td>
+                                <?= $user->nom ?>
+                            </td>
+                            <td>
+                                <?= $user->prenom ?>
+                            </td>
+                            <td>
+                                <?= $user->age ?>
+                            </td>
+                            <td>
+                                <?= $user->email ?>
+                            </td>
+                            <td>
+                                <a href="index.php?action=edit&id=<?php echo $user->id ?>" class="btn">Modifier</a>
+                                <a href="index.php?action=delete&id=<?php echo $user->id ?>" class="btn">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <?php $content = ob_get_clean(); ?>
     <?php
     include_once("views/layout.php");
     ?>
+</div>
