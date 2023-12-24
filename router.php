@@ -2,9 +2,10 @@
 
 // namespace Routes\Routes;
 
-class Route
+
+class Router
 {
-    private string $controller = 'MVC\Controllers\HomeController';
+    private string $controller = 'Controllers\UserController';
     private string $method = 'index';
     private array $params = array();
 
@@ -15,17 +16,17 @@ class Route
 
     public function Sender(): void
     {
-        $uri = $_SERVER['REQUEST_URI'] ?? '';
+        $uri = $_SERVER['REQUEST_URI'] ;
         $uri = explode('/', trim(strtolower($uri), '/'));
         unset($uri[0]);
         if (!empty($uri[1])) {
             $controller = ucwords($uri[1]) . 'Controller';
             unset($uri[1]);
-            $controller = "MVC\Controllers\\" . $controller;
+            $controller = "Controllers\\" . $controller;
             if (class_exists($controller)) {
                 $this->controller = $controller;
             } else {
-                include '../app/View/error404.php';
+                include 'views/404/404.php';
                 exit;
             }
         }

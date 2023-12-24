@@ -2,7 +2,7 @@
     "name": "youcode/simple-mvc",
     "autoload": {
         "psr-4": {
-            "Youcode\\SimpleMvc\\": "src/"
+            "Controllers\\": "Controller/"
         }
     },
     "authors": [

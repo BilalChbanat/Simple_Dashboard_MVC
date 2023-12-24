@@ -1,49 +1,52 @@
 <?php
-
+namespace Controllers;
 require_once 'model/UserModel.php';
-
-function indexAction()
+class UserController
 {
-    $users = latest();
-    require_once 'views/liste_users.php';
-}
 
-function createAction()
-{
-    require_once 'views/create.php';
-}
+    function index()
+    {
+        $users = latest();
+        require_once 'views/liste_users.php';
+    }
 
-function storeAction()
-{
-    create();
+    function createAction()
+    {
+        require_once 'views/create.php';
+    }
 
-    header('location:index.php?action=list');
-}
+    function storeAction()
+    {
+        create();
 
-function editAction()
-{
-    $id = $_GET['id'];
-    $user = view($id);
-    require_once 'views/edit.php';
-}
+        header('location:index.php?action=list');
+    }
 
-function updateAction()
-{
-    extract($_POST);
-    edit($id, $nom, $prenom, $age, $login, $password);
-    header('location:index.php?action=list');
-}
+    function editAction()
+    {
+        $id = $_GET['id'];
+        $user = view($id);
+        require_once 'views/edit.php';
+    }
 
-function deleteAction()
-{
-    $id = $_GET['id'];
-    require_once 'views/delete.php';
-}
+    function updateAction()
+    {
+        extract($_POST);
+        edit($id, $nom, $prenom, $age, $login, $password);
+        header('location:index.php?action=list');
+    }
 
-function destroyAction()
-{
-    destroy($_GET['id']);
+    function deleteAction()
+    {
+        $id = $_GET['id'];
+        require_once 'views/delete.php';
+    }
 
-    header('location:index.php?action=list');
+    function destroyAction()
+    {
+        destroy($_GET['id']);
 
+        header('location:index.php?action=list');
+
+    }
 }
