@@ -13,13 +13,14 @@ class UserController
     function create()
     {
         require_once '../views/create.php';
+       
     }
 
-    function storeAction()
+    function store()
     {
         create();
 
-        header('location:../public/index.php');
+        header('location:../');
     }
 
     function edit($id)

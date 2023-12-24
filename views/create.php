@@ -13,7 +13,7 @@
     $title = "Ajouter Team";
     ob_start();
     ?>
-    <form method="post">
+    <form action="./store" method="post">
         <div class="form-group">
             <label>Nom</label>
             <input type="text" class="form-control" name="nom">
