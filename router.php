@@ -16,7 +16,7 @@ class Router
 
     public function Sender(): void
     {
-        $uri = $_SERVER['REQUEST_URI'] ;
+        $uri = $_SERVER['REQUEST_URI'];
         $uri = explode('/', trim(strtolower($uri), '/'));
         unset($uri[0]);
         if (!empty($uri[1])) {
@@ -26,7 +26,9 @@ class Router
             if (class_exists($controller)) {
                 $this->controller = $controller;
             } else {
-                include '../views/404/404.php';
+                include 'views/error404/error404.php';
+                // echo "error not fined";
+
                 exit;
             }
         }
@@ -42,8 +44,9 @@ class Router
             if (method_exists($objetController, $method)) {
                 $this->method = $method;
             } else {
-                include '../views/404/404.php';
+                include 'views/error404/error404.php';
                 // echo "error not fined";
+
                 exit;
             }
         }

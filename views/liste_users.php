@@ -8,7 +8,7 @@ ob_start();
         <div class="recentOrders">
             <div class="cardHeader">
                 <h2>Our Teams</h2>
-                <a class="title" href="index.php?action=list"> Teams List</a>
+                <a class="title" href="#"> Teams List</a>
                 <a class="title" href="user/create">Add Team</a>
 
                 <!-- <a href="#" class="btn">View All</a> -->
