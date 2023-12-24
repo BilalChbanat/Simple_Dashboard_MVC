@@ -27,7 +27,6 @@ class Router
                 $this->controller = $controller;
             } else {
                 include 'views/error404/error404.php';
-                // echo "error not fined";
 
                 exit;
             }
@@ -45,8 +44,6 @@ class Router
                 $this->method = $method;
             } else {
                 include 'views/error404/error404.php';
-                // echo "error not fined";
-
                 exit;
             }
         }

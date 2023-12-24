@@ -1,5 +1,6 @@
 <?php
 namespace Controllers;
+
 require_once '../model/UserModel.php';
 class UserController
 {
@@ -13,7 +14,7 @@ class UserController
     function create()
     {
         require_once '../views/create.php';
-       
+
     }
 
     function store()
@@ -25,28 +26,27 @@ class UserController
 
     function edit($id)
     {
-       
         $user = view($id);
         require_once '../views/edit.php';
     }
 
 
-    function updateAction()
+    function editAction()
     {
         extract($_POST);
         edit($id, $nom, $prenom, $age, $login, $password);
-        header('location:../public/index.php');
+        header('location:../');
     }
 
     function delete($id)
     {
-     
+
         destroy($id);
 
         header('location:../../');
 
     }
-  
 
-  
+
+
 }
