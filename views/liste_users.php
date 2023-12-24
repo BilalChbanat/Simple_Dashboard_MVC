@@ -3,13 +3,13 @@
 ob_start();
 ?>
 <div class="main">
-    <?php require_once 'views/include/header.php'; ?>
+    <?php require_once '../views/include/header.php'; ?>
     <div class="details">
         <div class="recentOrders">
             <div class="cardHeader">
                 <h2>Our Teams</h2>
                 <a class="title" href="index.php?action=list"> Teams List</a>
-                <a class="title" href="index.php?action=create">Add Team</a>
+                <a class="title" href="user/create">Add Team</a>
 
                 <!-- <a href="#" class="btn">View All</a> -->
             </div>
@@ -45,8 +45,8 @@ ob_start();
                                 <?= $user->email ?>
                             </td>
                             <td>
-                                <a href="index.php?action=edit&id=<?php echo $user->id ?>" class="btn">Modifier</a>
-                                <a href="index.php?action=delete&id=<?php echo $user->id ?>" class="btn">Supprimer</a>
+                                <a href="user/edit/<?php echo $user->id ?>" class="btn">Modifier</a>
+                                <a href="user/delete/<?php echo $user->id ?>" onclick="return confirm('Do you really want to Delete ?');" class="btn">Supprimer</a>
                             </td>
                         </tr>
 
@@ -58,6 +58,6 @@ ob_start();
     </div>
     <?php $content = ob_get_clean(); ?>
     <?php
-    include_once("views/layout.php");
+    include_once("../views/layout.php");
     ?>
 </div>

@@ -13,7 +13,7 @@
     $title = "Ajouter Team";
     ob_start();
     ?>
-    <form action="index.php?action=store" method="post">
+    <form method="post">
         <div class="form-group">
             <label>Nom</label>
             <input type="text" class="form-control" name="nom">
@@ -38,7 +38,7 @@
             <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
         </div>
         <?php $content = ob_get_clean(); ?>
-        <?php include_once 'views/layout.php'; ?>
+        <?php include_once '../views/layout.php'; ?>
     </form>
 </body>
 

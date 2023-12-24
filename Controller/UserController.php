@@ -1,52 +1,50 @@
 <?php
 namespace Controllers;
-require_once 'model/UserModel.php';
+require_once '../model/UserModel.php';
 class UserController
 {
 
     function index()
     {
         $users = latest();
-        require_once 'views/liste_users.php';
+        require_once '../views/liste_users.php';
     }
 
-    function createAction()
+    function create()
     {
-        require_once 'views/create.php';
+        require_once '../views/create.php';
     }
 
     function storeAction()
     {
         create();
 
-        header('location:index.php?action=list');
+        header('location:../public/index.php');
     }
 
-    function editAction()
+    function edit($id)
     {
-        $id = $_GET['id'];
+       
         $user = view($id);
-        require_once 'views/edit.php';
+        require_once '../views/edit.php';
     }
+
 
     function updateAction()
     {
         extract($_POST);
         edit($id, $nom, $prenom, $age, $login, $password);
-        header('location:index.php?action=list');
+        header('location:../public/index.php');
     }
 
-    function deleteAction()
+    function delete($id)
     {
-        $id = $_GET['id'];
-        require_once 'views/delete.php';
-    }
+     
+        destroy($id);
 
-    function destroyAction()
-    {
-        destroy($_GET['id']);
-
-        header('location:index.php?action=list');
+        header('location:../../');
 
     }
+
+  
 }

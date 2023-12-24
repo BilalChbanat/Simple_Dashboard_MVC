@@ -26,7 +26,7 @@ class Router
             if (class_exists($controller)) {
                 $this->controller = $controller;
             } else {
-                include 'views/404/404.php';
+                include '../views/404/404.php';
                 exit;
             }
         }
@@ -42,7 +42,7 @@ class Router
             if (method_exists($objetController, $method)) {
                 $this->method = $method;
             } else {
-                include 'views/404/404.php';
+                include '../views/404/404.php';
                 // echo "error not fined";
                 exit;
             }
